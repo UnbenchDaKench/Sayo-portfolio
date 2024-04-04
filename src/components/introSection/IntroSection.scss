@@ -1,0 +1,59 @@
+.intro {
+    .typewriter {
+        overflow: hidden;
+        /* Ensures the content is not revealed until the animation */
+        white-space: nowrap;
+        animation: typing 5s steps(50, end);
+        font-size: 45px;
+
+        @media screen and (max-width: 600px) {
+            font-size: 30px;
+        }
+
+        /* Keeps the content on a single line */
+        .intro-title {
+            // font-family: NTR, sans-serif;
+            font-family: Montserrat Alternates;
+
+            .intro-name {
+                color: #ffcb9a;
+            }
+
+
+        }
+
+
+
+    }
+}
+
+.cursor--blinking {
+    color: black;
+    padding-left: 4px;
+    animation: blink 1s linear infinite;
+    opacity: 1;
+}
+
+@keyframes typing {
+    from {
+        width: 0
+    }
+
+    to {
+        width: 100%
+    }
+}
+
+@keyframes blink {
+    0% {
+        opacity: 1;
+    }
+
+    50% {
+        opacity: 0;
+    }
+
+    100% {
+        opacity: 1;
+    }
+}

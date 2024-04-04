@@ -1,0 +1,21 @@
+.navbar {
+    height: 60px;
+    width: 100%;
+    position: fixed;
+    z-index: 2;
+    background-color: #2C3531;
+
+    .link {
+        text-decoration: none;
+        color: #ffcb9a;
+    }
+}
+
+
+
+.nav-drawer {
+    .link {
+        text-decoration: none;
+        color: #ffcb9a;
+    }
+}

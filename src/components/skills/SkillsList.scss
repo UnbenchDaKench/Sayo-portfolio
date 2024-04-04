@@ -1,0 +1,7 @@
+.skills-list {
+    li:before {
+        content: "▹ ";
+        left: 0;
+        position: absolute;
+    }
+}
