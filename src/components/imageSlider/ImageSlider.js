@@ -58,11 +58,11 @@ function ImageSlider({ handleSliderClose, imageClicked, images, imageIndex }) {
       sx={{
         position: "fixed",
         zIndex: 2,
-        width: "100%",
-        height: "100vh",
+        width: "80%",
+        height: "90vh",
         mt: {
-          xs: "0",
-          md: "0",
+          xs: width > height ? "10%" : "10%",
+          md: width > height ? "1%" : "3%",
         },
         alignSelf: "center",
         display: "block",
@@ -114,15 +114,16 @@ function ImageSlider({ handleSliderClose, imageClicked, images, imageIndex }) {
 
               width: {
                 xs: "100%",
-                sm: width > height ? "90vw" : "auto",
+                sm: width > height ? "100%" : "auto",
               },
               height: {
                 xs: "auto",
                 sm: height >= width ? "90vh" : "auto",
               },
               mt: {
-                xs: width > height ? "30%" : "10%",
-                md: width > height ? "1%" : "3%",
+                xs: width > height ? "35%" : "0%",
+                md: width > height ? "7%" : "0%",
+                xl: width > height ? "2%" : "0%",
               },
             }}
           />
