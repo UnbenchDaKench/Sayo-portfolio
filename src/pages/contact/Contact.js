@@ -21,7 +21,6 @@ function Contact() {
   const templateId = process.env.REACT_APP_TEMPLATE_ID;
   const publicKey = process.env.REACT_APP_PUBLIC_KEY;
 
-  console.log(publicKey)
 
   const templateParams = {
     from_name: firstName + " " + lastName,
@@ -54,7 +53,17 @@ function Contact() {
     })
   };
   return (
-    <div className="contact-page" id="form">
+    <Box className="contact-page" id="form" sx={{
+      height: "100%",
+      width: "100vw",
+      paddingTop: "100px",
+      display: "flex",
+      justifyContent: "center",
+      flexDirection: {
+        xs: "column",
+        md: "row"
+      }
+    }}>
       <Container
         sx={{
           width: {
@@ -191,7 +200,7 @@ function Contact() {
         
         <SocialMediaIcons />
       </Box>
-    </div>
+    </Box>
   );
 }
 
