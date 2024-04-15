@@ -46,9 +46,11 @@ function Contact() {
       setFirstName('')
       setLastName('')
       setMessage('')
+      alert("Email sent successfully!")
     })
     .catch((error) => {
       console.error('Error sending email', error)
+      alert("Error with email service")
     })
   };
   return (
