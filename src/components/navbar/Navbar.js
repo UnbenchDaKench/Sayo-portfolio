@@ -33,7 +33,6 @@ function Navbar() {
         },
         width: "100%",
         justifyContent: "space-between",
-        // position: fix,
       }}
     >
       <Box
@@ -52,7 +51,7 @@ function Navbar() {
             sx={{
               fontFamily: "Playfair Display",
               fontWeight: "bold",
-              color: "#ffcb9a",
+              color: "#0d0d0d"
             }}
           >
             Sayo Oladoyin
@@ -62,9 +61,6 @@ function Navbar() {
           sx={{
             display: "flex",
             position: "relative",
-            // width: "30%",
-            // justifySelf: "center",
-            // justifyContent: "center",
           }}
         >
           {navLinks.map((text, index) => (
@@ -100,7 +96,7 @@ function Navbar() {
       sx={{
         height: "100%",
         width: "200px",
-        backgroundColor: "#2C3531",
+        backgroundColor: "#bde8f1",
       }}
     >
       <Box
@@ -140,7 +136,7 @@ function Navbar() {
     <Paper
       className="navbar"
       sx={{
-        backgroundColor: "#2C3531",
+        backgroundColor: "#bde8f1",
         display: "flex",
       }}
     >

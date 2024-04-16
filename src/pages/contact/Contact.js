@@ -31,13 +31,7 @@ function Contact() {
 
   const handleSubmit = (event) => {
     event.preventDefault();
-    // const data = new FormData(event.currentTarget);
-    // console.log({
-    //   firstName: data.get("firstName"),
-    //   lastName: data.get("lastName"),
-    //   email: data.get("email"),
-    //   message: data.get("message"),
-    // });
+  
     emailjs.send(serviceId, templateId, templateParams, publicKey)
     .then((response) =>{
       console.log('Email sent successfully!', response)
@@ -53,17 +47,21 @@ function Contact() {
     })
   };
   return (
-    <Box className="contact-page" id="form" sx={{
-      height: "100%",
-      width: "100vw",
-      paddingTop: "100px",
-      display: "flex",
-      justifyContent: "center",
-      flexDirection: {
-        xs: "column",
-        md: "row"
-      }
-    }}>
+    <Box
+      className="contact-page"
+      id="form"
+      sx={{
+        height: "100%",
+        width: "100vw",
+        paddingTop: "100px",
+        display: "flex",
+        justifyContent: "center",
+        flexDirection: {
+          xs: "column",
+          md: "row",
+        },
+      }}
+    >
       <Container
         sx={{
           width: {
@@ -72,7 +70,7 @@ function Contact() {
           height: {
             md: "50%",
           },
-          backgroundColor: "#116466",
+          backgroundColor: "#f2f2f0",
           mt: "15%",
         }}
       >
@@ -99,7 +97,7 @@ function Contact() {
                 autoComplete="given-name"
                 variant="outlined"
                 sx={{
-                  backgroundColor: "#ffcb9a",
+                  backgroundColor: "#5b6e74",
                   borderRadius: "10px",
                 }}
               />
@@ -116,7 +114,8 @@ function Contact() {
                 autoComplete="family-name"
                 variant="outlined"
                 sx={{
-                  backgroundColor: "#ffcb9a",
+                  backgroundColor: "#5b6e74",
+
                   borderRadius: "10px",
                 }}
               />
@@ -133,7 +132,7 @@ function Contact() {
                 autoComplete="email"
                 variant="outlined"
                 sx={{
-                  backgroundColor: "#ffcb9a",
+                  backgroundColor: "#5b6e74",
                   borderRadius: "10px",
                 }}
               />
@@ -150,7 +149,7 @@ function Contact() {
                 fullWidth
                 variant="outlined"
                 sx={{
-                  backgroundColor: "#ffcb9a",
+                  backgroundColor: "#5b6e74",
                   borderRadius: "10px",
                 }}
               />
@@ -161,8 +160,8 @@ function Contact() {
                 variant="contained"
                 color="primary"
                 sx={{
-                  backgroundColor: "#2c3531",
-                  // color: "black",
+                  backgroundColor: "#bde8f1",
+                  color: "#5b6e74",
                 }}
               >
                 Submit
@@ -190,14 +189,14 @@ function Contact() {
             width: {
               md: "80%",
             },
-            color: "#d1e8e2",
+            color: "#5b6e74",
           }}
           variant="h4"
         >
           For commissions and job offers you can fill out the form or reach out
           to me on social media!
         </Typography>
-        
+
         <SocialMediaIcons />
       </Box>
     </Box>

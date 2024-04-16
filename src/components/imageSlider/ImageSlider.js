@@ -66,7 +66,7 @@ function ImageSlider({ handleSliderClose, imageClicked, images, imageIndex }) {
         },
         alignSelf: "center",
         display: "block",
-        backgroundColor: "#d9b08c",
+        backgroundColor: "#bde8f1",
       }}
     >
       <div ref={modalRef}>
