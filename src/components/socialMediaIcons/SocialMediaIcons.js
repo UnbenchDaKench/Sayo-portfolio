@@ -12,7 +12,7 @@ function SocialMediaIcons() {
         gap: "10px",
       }}
     >
-      <a href="https://instagram.com" target="_blank">
+      <a href="https://www.instagram.com/sleepys.sketches/" target="_blank">
         <SvgIcon
           sx={{
             width: "50px",
@@ -101,7 +101,10 @@ function SocialMediaIcons() {
           </defs>
         </SvgIcon>
       </a>
-      <a href="https://linkedin.com" target="_blank">
+      <a
+        href="https://www.linkedin.com/in/sayo-oladoyin-8589a9263/"
+        target="_blank"
+      >
         <SvgIcon
           sx={{
             width: "50px",
