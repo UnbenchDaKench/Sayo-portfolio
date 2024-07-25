@@ -16,8 +16,7 @@ function GameDesignSection() {
         flexDirection: "column",
       }}
     >
-      <h2>Coming Soon</h2>
-      {/* <Box
+      <Box
         sx={{
           display: "flex",
           justifyContent: "left",
@@ -44,6 +43,9 @@ function GameDesignSection() {
           }}
         />
       </Box>
+      <h2>Coming Soon</h2>
+
+      {/* 
       <Box>
         <Box
           sx={{
