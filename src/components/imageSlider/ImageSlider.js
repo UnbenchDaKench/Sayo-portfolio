@@ -1,6 +1,6 @@
 import React, { useRef, useEffect, useState } from "react";
 import "./ImageSlider.scss";
-import { IconButton, Paper, Box, Drawer } from "@mui/material";
+import { IconButton, Paper, Box, Drawer, Modal, Fade } from "@mui/material";
 import CancelIcon from "@mui/icons-material/Cancel";
 import ArrowBackIosIcon from "@mui/icons-material/ArrowBackIos";
 import ArrowForwardIosIcon from "@mui/icons-material/ArrowForwardIos";
@@ -9,6 +9,12 @@ function ImageSlider({ handleSliderClose, imageClicked, images, imageIndex }) {
   const [width, setWidth] = useState("");
   const [height, setheight] = useState("");
   const [index, setIndex] = useState(imageIndex);
+  const [open, setOpen] = useState(imageClicked);
+
+  const handleClose = () => {
+    // setOpen(false);
+    handleSliderClose();
+  };
 
   const modalRef = useRef();
   const handleOutsideClick = (event) => {
@@ -52,66 +58,153 @@ function ImageSlider({ handleSliderClose, imageClicked, images, imageIndex }) {
     };
   }, [imageClicked, imageIndex, width, height, images, index]);
   return (
-    <Paper
-      id="image-modal"
-      elevation={3}
+    // <Paper
+    //   id="image-modal"
+    //   elevation={3}
+    //   sx={{
+    //     position: "fixed",
+    //     zIndex: 2,
+    //     width: "80%",
+    //     height: "90vh",
+    //     mt: {
+    //       xs: width > height ? "10%" : "10%",
+    //       md: width > height ? "1%" : "3%",
+    //     },
+    //     alignSelf: "center",
+    //     display: "block",
+    //     backgroundColor: "#bde8f1",
+    //   }}
+    // >
+    //   <div ref={modalRef}>
+    //     <IconButton
+    //       sx={{
+    //         position: "absolute",
+    //         right: "0",
+    //       }}
+    //       onClick={handleSliderClose}
+    //     >
+    //       <CancelIcon />
+    //     </IconButton>
+    //     <IconButton
+    //       sx={{
+    //         position: "absolute",
+    //         left: "5%",
+    //         top: "40%",
+    //         width: "60px",
+    //         height: "60px",
+    //       }}
+    //       onClick={lastImage}
+    //     >
+    //       <ArrowBackIosIcon sx={{ height: "100%", width: "100%" }} />
+    //     </IconButton>
+    //     <IconButton
+    //       sx={{
+    //         position: "absolute",
+    //         left: "91%",
+    //         top: "40%",
+    //         width: "60px",
+    //         height: "60px",
+    //       }}
+    //       onClick={nextImage}
+    //     >
+    //       <ArrowForwardIosIcon sx={{ height: "100%", width: "100%" }} />
+    //     </IconButton>
+
+    //     {width !== "" && height !== "" && (
+    //       <Box
+    //         component="img"
+    //         src={images[index].img}
+    //         sx={{
+    //           objectPosition: "center",
+    //           objectFit: "cover",
+
+    //           width: {
+    //             xs: "100%",
+    //             sm: width > height ? "100%" : "auto",
+    //           },
+    //           height: {
+    //             xs: "auto",
+    //             sm: height >= width ? "90vh" : "auto",
+    //           },
+    //           mt: {
+    //             xs: width > height ? "35%" : "0%",
+    //             md: width > height ? "7%" : "0%",
+    //             xl: width > height ? "2%" : "0%",
+    //           },
+    //         }}
+    //       />
+    //     )}
+    //   </div>
+    // </Paper>
+    <Modal
+      open={open}
+      onClose={handleClose}
+      closeAfterTransition
       sx={{
-        position: "fixed",
-        zIndex: 2,
+        display: "flex",
+        alignItems: "center",
+        justifyContent: "center",
         width: "80%",
         height: "90vh",
-        mt: {
-          xs: width > height ? "10%" : "10%",
-          md: width > height ? "1%" : "3%",
+        left: {
+          xs: "10%",
         },
-        alignSelf: "center",
-        display: "block",
-        backgroundColor: "#bde8f1",
+        top: {
+          xs: "5vh",
+        },
       }}
     >
-      <div ref={modalRef}>
-        <IconButton
+      <Fade in={open} timeout={500}>
+        <Box
           sx={{
-            position: "absolute",
-            right: "0",
+            width: {
+              xs: "100%",
+              sm: width > height ? "100%" : "auto",
+            },
+            height: {
+              xs: "auto",
+              sm: height >= width ? "90vh" : "auto",
+            },
+            mt: {
+              xs: width > height ? "0%" : "0%",
+              md: width > height ? "7%" : "0%",
+              xl: width > height ? "2%" : "0%",
+            },
           }}
-          onClick={handleSliderClose}
         >
-          <CancelIcon />
-        </IconButton>
-        <IconButton
-          sx={{
-            position: "absolute",
-            left: "5%",
-            top: "40%",
-            width: "60px",
-            height: "60px",
-          }}
-          onClick={lastImage}
-        >
-          <ArrowBackIosIcon sx={{ height: "100%", width: "100%" }} />
-        </IconButton>
-        <IconButton
-          sx={{
-            position: "absolute",
-            left: "91%",
-            top: "40%",
-            width: "60px",
-            height: "60px",
-          }}
-          onClick={nextImage}
-        >
-          <ArrowForwardIosIcon sx={{ height: "100%", width: "100%" }} />
-        </IconButton>
-
-        {width !== "" && height !== "" && (
+          <IconButton
+            sx={{
+              position: "absolute",
+              // left: width > height ? "5%" : "20%",
+              left: "5%",
+              top: { xs: "48%", sm: "45%", md: "50%" },
+              width: { xs: "30px", sm: "60px" },
+              height: { xs: "30px", sm: "60px" },
+              // zIndex: 5
+            }}
+            onClick={lastImage}
+          >
+            <ArrowBackIosIcon sx={{ height: "100%", width: "100%" }} />
+          </IconButton>
+          <IconButton
+            sx={{
+              position: "absolute",
+              top: { xs: "48%", sm: "45%", md: "50%" },
+              width: { xs: "30px", sm: "60px" },
+              height: { xs: "30px", sm: "60px" },
+              // right: width > height ? "5%" : "20%",
+              right: "5%",
+            }}
+            onClick={nextImage}
+          >
+            <ArrowForwardIosIcon sx={{ height: "100%", width: "100%" }} />
+          </IconButton>
           <Box
             component="img"
             src={images[index].img}
             sx={{
-              objectPosition: "center",
               objectFit: "cover",
-
+              objectPosition: "center",
               width: {
                 xs: "100%",
                 sm: width > height ? "100%" : "auto",
@@ -120,16 +213,16 @@ function ImageSlider({ handleSliderClose, imageClicked, images, imageIndex }) {
                 xs: "auto",
                 sm: height >= width ? "90vh" : "auto",
               },
-              mt: {
-                xs: width > height ? "35%" : "0%",
-                md: width > height ? "7%" : "0%",
-                xl: width > height ? "2%" : "0%",
-              },
+              // mt: {
+              //   xs: width > height ? "35%" : "0%",
+              //   md: width > height ? "7%" : "0%",
+              //   xl: width > height ? "2%" : "0%",
+              // },
             }}
-          />
-        )}
-      </div>
-    </Paper>
+          ></Box>
+        </Box>
+      </Fade>
+    </Modal>
   );
 }
 

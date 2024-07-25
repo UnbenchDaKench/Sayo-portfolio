@@ -16,7 +16,8 @@ function GameDesignSection() {
         flexDirection: "column",
       }}
     >
-      <Box
+      <h2>Coming Soon</h2>
+      {/* <Box
         sx={{
           display: "flex",
           justifyContent: "left",
@@ -56,7 +57,7 @@ function GameDesignSection() {
             <ProjectCards key={index} project={project} />
           ))}
         </Box>
-      </Box>
+      </Box> */}
     </Box>
   );
 }
