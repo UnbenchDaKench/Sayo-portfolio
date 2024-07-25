@@ -5,6 +5,10 @@ import GirlOnBeach from "../images/art/Girl on beach.jpg"
 import Lamide from "../images/art/Lamide.jpg"
 import MomsOldClassmate from "../images/art/Mom's old classmate.jpg"
 import MotherAndDaughter from "../images/art/Mother and daughter.jpg"
+import CharacterSheet from "../images/gameDesign/Character sheet.jpg";
+import Dagger from "../images/gameDesign/Dagger.jpg";
+import FireGirl from "../images/gameDesign/fire girl.jpg";
+import Scarecrow from "../images/gameDesign/Scarecrow.jpg";
 
 export const Art = [
   {
@@ -27,5 +31,17 @@ export const Art = [
   },
   {
     img: MotherAndDaughter,
+  },
+  {
+    img: CharacterSheet,
+  },
+  {
+    img: Dagger,
+  },
+  {
+    img: FireGirl,
+  },
+  {
+    img: Scarecrow,
   },
 ];
